@@ -4,21 +4,70 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     min-height: 100vh;
-    background: #79AB76;
-    display: felx;
+    background: #1E392B;
+    display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content:  center;
 }
 
-.container {
+.app-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2em; 
     color: white; 
+    background-color: #79AB76;
     border-radius: 2em;
-    padding: 4em;
+    padding: 4em 3em;
+}
+
+sword-icon{
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.5em;
+}
+
+.title{
+    font-size: 3em;
+    justify-content: center;
+}
+
+.timer {
+    font-size: 3em;
+    margin-bottom: 0.1em;
+
+}
+#app-message{
+    font-size: 1em;
+    color: #1E392B;
+    opacity: 0.85em;
+    margin-bottom: 1.5em;
+}
+
+
+button {
+   font-size: 1em;
+   font-weight: 400;
+   letter-spacing: 1px;
+   padding: 0.5em 2em;
+   border-radius: 2em;
+   cursor:pointer;
+   transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-10px);
+ }
+  
+#start{
+    background-color: #1E392B;
+    border-color: #1E392B;
+    color: #79AB76;
+}
+
+#restart{
+    background-color: #79AB76;
+    border-color: #BF8018;
+    color: #BF8018;
 }

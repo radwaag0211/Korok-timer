@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang = "eng">
-    <head>
-        <link rel ="preconnect" href= "https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=EG+Garamond:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+<html lang="eng">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EG+Garamond:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
-        <link rel="stylesheet" href="./style.css" />
-        <title> Korok Timer </title>
-    </head>
-    <body>
-        <div class="app-container">
-            <h1>Image</h1>
-            <div class="app-circle">
-            <div class="circle-shape">
-            <div class="semi-circle right-side circle-mask"></div>
-            <div class="semi-circle right-side circle"></div>
-            <div class="semi-circle left-side circle-mask"></div>
-            <div class="semi-circle left-side circle"></div>
+    <link rel="stylesheet" href="./style.css" />
+    <title> Korok Timer </title>
+</head>
+
+<body>
+    <div class="app-container">
+        <img src="/img/sword_icon.png" class="sword-icon" />
+        <p class="timer" id="timer"> 25:00</p>
+        <div id="app-message">press start to begin</div>
+        <div class="app-line">
+            <div class="line-shape">
+                <div class="controls">
+                    <div class="button">
+                        <button id="start">start</button>
+                        <button button id = "stop" class ="hidden">stop </button>
+                        <button id="restart">restart</button>
+                    </div>
+                    <div class="dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
         </div>
-    <div class="timer">
-        <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
     </div>
-    <div class="app-message">press start to begin</div>
-    <button class="btn-start">start</button>
-    <button class="btn-restart">restart</button>
-    </body> 
-<script src = "./app.js"></script>
+</body>
+<script src="./app.js"></script>
