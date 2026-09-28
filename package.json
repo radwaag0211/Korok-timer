@@ -1,0 +1,13 @@
+{
+  "name": "korok-timer",
+  "version": "1.0.0",
+  "description": "A Zelda-inspired Pomodoro timer",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host"
+  },
+  "devDependencies": {
+    "vite": "^8.0.0"
+  },
+  "license": "MIT"
+}
