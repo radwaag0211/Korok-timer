@@ -39,7 +39,7 @@ body{
     left: 0;
     width: 202px;
     height: 196px;
-    background: url("../img/icon.png") center / 100% 100% no-repeat;
+    background: url("img/icon.png") center / 100% 100% no-repeat;
     image-rendering: pixelated;
 }
 
