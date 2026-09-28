@@ -10,22 +10,48 @@ body{
     display: flex;
     align-items: center;
     justify-content:  center;
+    font-family: "Inter", sans-serif;
 }
 
 .app-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white; 
-    background-color: #79AB76;
+    color: white;
+    background-color: #83A97B;
+    border: 6px solid #658070;
     border-radius: 2em;
     padding: 4em 3em;
 }
 
-sword-icon{
-    width: 150px;
-    height: auto;
+
+.sword-scene {
+    position: relative;
+    width: 202px;
+    height: 240px;
     margin-bottom: 1.5em;
+}
+
+
+.sword-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 202px;
+    height: 196px;
+    background: url("../img/icon.png") center / 100% 100% no-repeat;
+    image-rendering: pixelated;
+}
+
+
+.sword-sprite {
+    position: absolute;
+    width: 90px;
+    height: 198px;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    image-rendering: pixelated;
 }
 
 .title{
@@ -35,32 +61,135 @@ sword-icon{
 
 .timer {
     font-size: 3em;
+    font-weight: 500;
     margin-bottom: 0.1em;
-
+    font-variant-numeric: tabular-nums; 
 }
+
 #app-message{
     font-size: 1em;
+    font-weight: 300;
     color: #1E392B;
-    opacity: 0.85em;
+    opacity: 0.85;
+    margin-bottom: 1.5em;
+    transition: color 0.3s ease;
+}
+
+
+#app-message.running {
+    color: white;
+    opacity: 1;
+}
+
+
+.progress {
+    position: relative;
+    width: 260px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgba(30, 57, 43, 0.3); 
+    margin-bottom: 2em;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    background-color: #1E392B; 
+    transition: width 1s linear;
+}
+
+.bean-wrap {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -60%); 
+    transition: left 1s linear;
+}
+
+.bean {
+    display: block;
+    width: 22px;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.bean.bouncing {
+    animation: bean-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bean-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .bean.bouncing { animation: none; }
+    .progress-fill, .bean-wrap { transition: none; }
+}
+
+
+.time-settings {
+    display: flex;
+    gap: 1em;
     margin-bottom: 1.5em;
 }
 
+.setting {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 0.8em;
+    color: #1E392B;
+}
+
+.setting select {
+    font-family: inherit;
+    font-size: 1em;
+    color: white;
+    background-color: #1E392B;
+    border: none;
+    border-radius: 2em;
+    padding: 0.35em 0.9em;
+    cursor: pointer;
+}
+
+.setting select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.button {
+    display: flex;
+    gap: 0.5em;
+}
 
 button {
-   font-size: 1em;
-   font-weight: 400;
-   letter-spacing: 1px;
-   padding: 0.5em 2em;
-   border-radius: 2em;
-   cursor:pointer;
-   transition: 0.2s ease-in-out;
-}
+    font-family: inherit;
+    border-radius: 2em;
+    padding: 0.5em 1.5em;
+    font-size: 0.8em;
+    cursor: pointer;
+  }
 
 button:hover {
     transform: translateY(-10px);
  }
-  
-#start{
+
+ .hidden {
+    display: none;
+ }
+
+#start, #stop{
     background-color: #1E392B;
     border-color: #1E392B;
     color: #79AB76;
@@ -70,4 +199,23 @@ button:hover {
     background-color: #79AB76;
     border-color: #BF8018;
     color: #BF8018;
+}
+
+.dots{
+    display: flex;
+    gap: 15px;
+    margin-top: 1em;
+}
+
+.dot{
+    height: 12px;
+    width: 12px;
+    background-color: #D6E6CF;
+    border-radius: 50%;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.dot.done{
+    background-color: #2F6B45;
+    transform: scale(1.15);
 }

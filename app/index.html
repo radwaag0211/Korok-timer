@@ -1,27 +1,58 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=EG+Garamond:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
     <title> Korok Timer </title>
 </head>
 
 <body>
     <div class="app-container">
-        <img src="/img/sword_icon.png" class="sword-icon" />
-        <p class="timer" id="timer"> 25:00</p>
+        <div class="sword-scene">
+            <div class="sword-glow"></div>
+            <img src="../img/sword_sprite.png" class="sword-sprite" alt="Master sword" />
+        </div>
+        <p class="timer" id="timer">25:00</p>
         <div id="app-message">press start to begin</div>
+
+        <div class="progress">
+            <div class="progress-fill" id="progress-fill"></div>
+            <div class="bean-wrap" id="bean-wrap">
+                <img src="../img/bean.png" class="bean" id="bean" alt="" />
+            </div>
+        </div>
+
+        <div class="time-settings">
+            <label class="setting">
+                focus
+                <select id="focus-select">
+                    <option value="15">15 min</option>
+                    <option value="25" selected>25 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">60 min</option>
+                </select>
+            </label>
+            <label class="setting">
+                break
+                <select id="break-select">
+                    <option value="5" selected>5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                </select>
+            </label>
+        </div>
+
         <div class="app-line">
             <div class="line-shape">
                 <div class="controls">
                     <div class="button">
                         <button id="start">start</button>
-                        <button button id = "stop" class ="hidden">stop </button>
+                        <button id="stop" class="hidden">stop</button>
                         <button id="restart">restart</button>
                     </div>
                     <div class="dots">
@@ -33,5 +64,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./app.js"></script>
 </body>
-<script src="./app.js"></script>
+
+</html>
