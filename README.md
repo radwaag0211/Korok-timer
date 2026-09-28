@@ -56,6 +56,7 @@ Core features are done. Ideas for next steps:
 
 - Timer concept inspired by [Codedex's Pomodoro App guide](https://www.codedex.io/projects/build-a-pomodoro-app-with-html-css-js)
 - Visual direction inspired by Korok Forest (The Legend of Zelda)
+- I built the core timer and designed the app myself. I used AI (Claude) as a coding assistant for some features: the progress bar with the bouncing seed, the focus/break settings and the heart containers
 
 ## License
 
